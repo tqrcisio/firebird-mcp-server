@@ -173,13 +173,13 @@ server.tool(
                 throw new Error('Only read queries (SELECT) are allowed');
             }
 
-            const result = await FirebirdDB.query(query, [limit]);
+            const result = await FirebirdDB.query(processedQuery, [limit]);
 
             return {
                 content: [
                     {
                         type: "text",
-                        text: `Query:\n${query}`
+                        text: `Query:\n${processedQuery}`
                     },
                     {
                         type: "text",
